@@ -1,0 +1,92 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+// Max number of candidates
+#define MAX 9
+
+// candidates have name and count
+typedef struct
+{
+    string name;
+    int votes;
+}
+candidate;
+
+// Array of candidates
+candidate candidates[MAX];
+
+// Number of Candidates
+int candidate_count;
+
+// Function Prototypes
+bool vote(string name);
+void print_winner(void);
+
+int main(int argc, string argv[])
+{
+    if (argc < 2)
+    {
+        printf("./Usage: plurality [candidate ...]\n");
+        return 1;
+    }
+
+    // populate array of candidates
+    candidate_count = argc - 1;
+    if (candidate_count > MAX)
+    {
+        printf("Maximum number of candidates is %i\n", MAX);
+        return 2;
+    }
+
+    int voter_count = get_int("Number of voters: ");
+
+    for (int i = 0; i < voter_count; i++)
+    {
+        string name = get_string("Vote: ");
+
+        // check for invalid vote
+        if (!vote(name))
+        {
+            printf("Invalid vote.\n");
+        }
+    }
+    // Display winner of elections
+    print_winner();
+}
+
+// Update vote totals given a new vote
+bool vote(string name)
+{
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name,candidates[i].name) == 0)
+        {
+            candidates[i].votes ++;
+            return true;
+        }
+    }
+    return false;
+}
+
+// print winner (or winners) of the eleceions
+void print_winner(void)
+{
+    int max_votes = candidates[0].votes;
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > max_votes)
+        {
+            max_votes = candidates[i].votes;
+        }
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == max_votes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+
+    }
+    return;
+}

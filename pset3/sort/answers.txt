@@ -1,0 +1,26 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+
+reversed50000.txt -> 6.490s
+sorted50000.txt -> 1.468s
+
+For sorted files, sort1 was the fastest in sorting them.
+
+sort2 uses: Merge Sort
+
+How do you know?:
+
+reversed50000.txt -> 3.213s
+sorted50000.txt -> 1.996s
+
+For a reversed txt file of 50,000 numbers, it was exponentially faster compared to the other sorting programs.
+
+sort3 uses: Selection Sort
+
+How do you know?:
+
+reversed50000.txt -> 4.193s
+sorted50000.txt -> 3.808s
+
+It was the slowest sorting program in both a reversed number text file, as well as a sorted txt file. Hence we can conclude that this is selection sort.
