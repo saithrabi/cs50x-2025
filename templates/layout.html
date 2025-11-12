@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block style %}
+  <link rel="stylesheet" href="/static/style.css"> {% endblock %}
+  <script src="/static/js/bootstrap.js"></script>
+  <title>Trio Foods: {% block title %}{% endblock %}</title>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class="flashes text-center">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md mx-3">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand" href="/home">Trio Foods</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-align-right">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M4 6l16 0" />
+          <path d="M10 12l10 0" />
+          <path d="M6 18l14 0" />
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-0 mx-5" id="navbarNav">
+        {% if session["user_id"] %}
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/buy">Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+        </ul>
+        {% else %}
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/buy">Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+          <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    {% block main %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 pt-3 copyright">
+          <h3>&COPY; Muhammad Rabi</h3>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Adapted from https://stackoverflow.com/a/10162353
+        const html = '<!DOCTYPE ' +
+          document.doctype.name +
+          (document.doctype.publicId ? ' PUBLIC "' + document.doctype.publicId + '"' : '') +
+          (!document.doctype.publicId && document.doctype.systemId ? ' SYSTEM' : '') +
+          (document.doctype.systemId ? ' "' + document.doctype.systemId + '"' : '') +
+          '>\n' + document.documentElement.outerHTML;
+        document.querySelector('form[action="https://validator.w3.org/check"] > input[name="fragment"]').value = html;
+      });
+    </script>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+@use 'custom';
+@import 'https://fonts.googleapis.com/css2?family=Lilita+One&family=Luckiest+Guy&family=Nabla:EDPT,EHLT@137,21&display=swap';
+.flashes {
+    border-radius: 20px;
+    background-color: custom.$fourth;
+}
+body::-webkit-scrollbar {
+    display: none;
+
+}
+body {
+    margin: 20px;
+    padding: 0;
+    max-width: 100%;
+    background-color: custom.$primary;
+    font-family: 'Lilita One';
+    nav {
+        border-radius: 10px;
+        background-color: black;
+        .navbar-toggler {
+            border-color: black;
+        }
+        .navbar-brand {
+            margin-right: 15%;
+            color: custom.$primary;
+            &:hover {
+                color: custom.$secondary;
+            }
+        }
+        .navbar-brand , .nav-link{
+            color: custom.$primary;
+            font-family:'Nabla';
+            border-radius: 5px;
+        }
+        .nav-link:hover{
+            color: custom.$secondary;
+            background-color: custom.$fourth;
+            border-radius: 5px;
+        }
+        .navbar-toggler {
+            background-color: custom.$secondary;
+            &:hover {
+                background-color: custom.$fourth;
+            }
+        }
+    }
+    .nabla {
+        font-family: 'Nabla';
+    }
+    .marg {
+        margin-top: 0%;
+    }
+    .input{
+        width: 90px;
+        border-color: custom.$secondary;
+        border-radius: 5px;
+        &:focus {
+            outline: none;
+            border-color: custom.$third;
+            box-shadow: 0 0 5px custom.$fourth;
+        }
+    }
+    .salty {
+        background-color: #57BCFF;
+        border-radius: 20px;
+    }
+    .hot {
+        background-color: custom.$third;
+        border-radius: 20px;
+    }
+    .masala {
+        background-color: black;
+        border-radius: 20px;
+        color: white;
+    }
+    .padding {
+        padding-top: 2%;
+    }
+    @media only screen and (min-width: 992px) {
+        .padding {
+            padding-top: 5%;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        h1 {
+            font-size: 5vw;
+        }
+        h6 {
+            font-size: 2vw;
+        }
+        .marg {
+            margin-top: 10%;
+        }
+    }
+    @media only screen and (max-width: 767px){
+        h1 {
+            font-size: 7vw;
+        }
+        h6 {
+            font-size: 5vw;
+        }
+    }
+    .btn {
+        background-color: custom.$fourth;
+        border: none;
+        &:hover, &:visited, &:focus, &:active {
+            background-color: green !important;
+        }
+    }
+    .footer {
+
+        position: relative;
+    
+        bottom: 0;
+    
+        left: 0;
+    
+        width: 100%;
+    
+        /* Add any necessary styling for the footer appearance */
+    
+    }
+    .item {
+        margin-top: 13%;
+        border-color: custom.$secondary;
+        box-shadow: none;
+        &:focus, &:hover, &:visited, &:active {
+            border-color: custom.$fourth;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6); 
+        }
+    }
+    .form {
+        border-color: custom.$secondary;
+        box-shadow: none;
+        &:focus, &:hover, &:visited, &:active {
+            border-color: custom.$fourth;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+        }
+    }
+}

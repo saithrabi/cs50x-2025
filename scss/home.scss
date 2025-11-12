@@ -1,0 +1,123 @@
+@use 'custom';
+@import 'https://fonts.googleapis.com/css2?family=Lilita+One&family=Luckiest+Guy&family=Nabla:EDPT,EHLT@137,21&display=swap';
+
+
+.flashes {
+    border-radius: 20px;
+    background-color: custom.$fourth;
+}
+body::-webkit-scrollbar {
+    display: none;
+
+}
+body {
+    margin: 20px;
+    padding: 0;
+    max-width: 100%;
+    background-color: custom.$primary;
+    font-family: 'Lilita One';
+    nav {
+        border-radius: 10px;
+        background-color: black;
+        .navbar-toggler {
+            border-color: black;
+        }
+        .navbar-brand {
+            margin-right: 15%;
+            color: custom.$primary;
+            &:hover {
+                color: custom.$secondary;
+            }
+        }
+        .navbar-brand , .nav-link{
+            color: custom.$primary;
+            font-family:'Nabla';
+            border-radius: 5px;
+        }
+        .nav-link:hover{
+            color: custom.$secondary;
+            background-color: custom.$fourth;
+            border-radius: 5px;
+        }
+        .navbar-toggler {
+            background-color: custom.$secondary;
+            &:hover {
+                background-color: custom.$fourth;
+            }
+        }
+    }
+    .bold_text {
+        font-size: 70pt;
+        color: black;
+    }
+    .padding {
+        padding-top: 0%;
+    }
+    @media only screen and (min-width: 768px) {
+        .padding {
+            padding-top: 20%;
+        }
+    }
+    @media only screen and (min-width: 993px) {
+        .padding{
+            padding-top: 0%;
+        }
+        .text {
+            padding-top: 5%;
+        }
+    }
+    .neutral {
+        width: 250px;
+        height: 250px;
+    }
+    @media only screen and (max-width: 600px) {
+        .neutral {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .salty {
+        background-color: #57BCFF;
+        border-radius: 20px;
+        color: custom.$primary;
+        font-size: large;
+    }
+    .masala {
+        background-color: black;
+        border-radius: 20px;
+        color: custom.$secondary;
+        font-size: large;
+    }
+    .hot {
+        background-color: custom.$third;
+        border-radius: 20px;
+        color: black;
+        font-size: large;
+    }
+    .nabla {
+        font-family: 'Nabla';
+    }
+    .avatar {
+        border-radius: 50%;
+    }
+    .elevate {
+        font-size: 30pt;
+        background-color: custom.$fourth;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .footer {
+
+        position: relative;
+    
+        bottom: 0;
+    
+        left: 0;
+    
+        width: 100%;
+    
+        /* Add any necessary styling for the footer appearance */
+    
+    }
+    
+}

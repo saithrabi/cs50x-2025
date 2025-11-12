@@ -1,0 +1,18 @@
+{
+  "name": "triofoods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass scss:static -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.82.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

@@ -1,0 +1,81 @@
+@use 'custom';
+@import 'https://fonts.googleapis.com/css2?family=Lilita+One&family=Luckiest+Guy&family=Nabla:EDPT,EHLT@137,21&display=swap';
+.flashes {
+    border-radius: 20px;
+    background-color: custom.$fourth;
+}
+body::-webkit-scrollbar {
+    display: none;
+
+}
+body {
+    margin: 20px;
+    padding: 0;
+    max-width: 100%;
+    background-color: custom.$primary;
+    font-family: 'Lilita One';
+    nav {
+        border-radius: 10px;
+        background-color: black;
+        .navbar-toggler {
+            border-color: black;
+        }
+        .navbar-brand {
+            margin-right: 15%;
+            color: custom.$primary;
+            &:hover {
+                color: custom.$secondary;
+            }
+        }
+        .navbar-brand , .nav-link{
+            color: custom.$primary;
+            font-family:'Nabla';
+            border-radius: 5px;
+        }
+        .nav-link:hover{
+            color: custom.$secondary;
+            background-color: custom.$fourth;
+            border-radius: 5px;
+        }
+        .navbar-toggler {
+            background-color: custom.$secondary;
+            &:hover {
+                background-color: custom.$fourth;
+            }
+        }
+    }
+    .bold_text {
+        font-size: 70pt;
+    }
+    .nabla {
+        font-family: 'Nabla';
+    }
+    .footer {
+
+        position: fixed;
+    
+        bottom: 0;
+    
+        left: 0;
+    
+        width: 100%;
+    
+        /* Add any necessary styling for the footer appearance */
+    
+    }
+    .form-control, .btn {
+        border-color: custom.$secondary;
+        box-shadow: none;
+        &:focus, &:hover, &:visited, &:active {
+            border-color: custom.$fourth;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+
+        }
+    }
+    .btn {
+        background-color: black;
+        &:hover, &:visited, &:focus, &:active {
+            background-color: custom.$fourth !important;
+        }
+    }
+}
